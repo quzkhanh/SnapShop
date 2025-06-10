@@ -2,16 +2,38 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 
-<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.snapshop.controller.LoginController" stylesheets="@css/style.css">
-    <padding>
-        <Insets top="50" right="50" bottom="50" left="50"/>
-    </padding>
-    <VBox fx:id="loginBox" styleClass="login-box">
-        <Label text="Đăng Nhập SnapShop" styleClass="title" />
-        <TextField fx:id="usernameField" promptText="Tên đăng nhập" styleClass="input-field" />
-        <PasswordField fx:id="passwordField" promptText="Mật khẩu" styleClass="input-field" />
-        <Button text="Đăng Nhập" onAction="#handleLogin" styleClass="login-button" />
-        <Label fx:id="errorLabel" text="" styleClass="error-label" />
-    </VBox>
-</VBox>
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.snapshop.controller.LoginController" stylesheets="@../css/style.css">
+    <children>
+        <!-- Background Image -->
+        <ImageView fx:id="backgroundImage" fitWidth="800" fitHeight="600">
+            <image>
+                <Image url="@../images/flower-background.jpg" />
+            </image>
+        </ImageView>
+
+        <!-- Login Form -->
+        <VBox alignment="CENTER" spacing="20" AnchorPane.leftAnchor="50" AnchorPane.rightAnchor="50" AnchorPane.topAnchor="50" AnchorPane.bottomAnchor="50">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <VBox fx:id="loginBox" styleClass="login-box">
+                <Label text="Đăng Nhập SnapShop" styleClass="welcome-text" />
+                <Label text="Chào mừng trở lại! Hôm nay là ngày mới, hãy bắt đầu quản lý cửa hàng của bạn." styleClass="subtitle" />
+                <TextField fx:id="usernameField" promptText="Email" styleClass="input-field" />
+                <PasswordField fx:id="passwordField" promptText="Mật khẩu" styleClass="input-field" />
+                <Hyperlink text="Quên mật khẩu?" styleClass="forgot-password" />
+                <Button text="Đăng Nhập" onAction="#handleLogin" styleClass="sign-in-button" />
+                <Label text="Hoặc" styleClass="or-label" />
+                <HBox spacing="10" alignment="CENTER">
+                    <Button styleClass="social-button google" text="Đăng nhập bằng Google" />
+                    <Button styleClass="social-button facebook" text="Đăng nhập bằng Facebook" />
+                </HBox>
+                <Label text="Bạn chưa có tài khoản? Đăng ký" styleClass="signup-link" />
+                <Label fx:id="errorLabel" text="" styleClass="error-label" />
+            </VBox>
+        </VBox>
+    </children>
+</AnchorPane>

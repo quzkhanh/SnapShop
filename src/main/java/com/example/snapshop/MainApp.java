@@ -8,14 +8,21 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.sql.Connection;
-import java.util.Objects;
 
 public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/login.fxml")));
-        if (root == null) {
-            throw new RuntimeException("Không thể load file login.fxml. Kiểm tra đường dẫn!");
+        System.out.println("Đang load FXML: " + getClass().getResource("/fxml/login.fxml"));
+        System.out.println("Đang load background: " + getClass().getResource("/images/flower-background.jpg"));
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
+            if (root == null) {
+                throw new RuntimeException("Không thể load file login.fxml. Kiểm tra đường dẫn!");
+            }
+        } catch (Exception e) {
+            System.err.println("Lỗi chi tiết: " + e.getMessage());
+            throw e;
         }
         primaryStage.setTitle("SnapShop");
         primaryStage.setScene(new Scene(root, 800, 600));
