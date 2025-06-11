@@ -1,39 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.snapshop.controller.LoginController" stylesheets="@../css/style.css">
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="800" prefWidth="1400.0" stylesheets="@../css/style_login.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.snapshop.controller.LoginController">
     <children>
-        <!-- Background Image -->
-        <ImageView fx:id="backgroundImage" fitWidth="800" fitHeight="600">
+        <!-- Background Image with lower opacity -->
+        <ImageView fx:id="backgroundImage" fitHeight="777.0" fitWidth="700.0" layoutX="700.0" layoutY="12.0" opacity="0.73" styleClass="background-image" AnchorPane.topAnchor="12.0">
             <image>
-                <Image url="@../images/flower-background.jpg" />
+                <Image url="@../images/background.jpg" />
             </image>
         </ImageView>
-
-        <!-- Login Form -->
-        <VBox alignment="CENTER" spacing="20" AnchorPane.leftAnchor="50" AnchorPane.rightAnchor="50" AnchorPane.topAnchor="50" AnchorPane.bottomAnchor="50">
-            <padding>
-                <Insets top="20" right="20" bottom="20" left="20"/>
-            </padding>
-            <VBox fx:id="loginBox" styleClass="login-box">
-                <Label text="Đăng Nhập SnapShop" styleClass="welcome-text" />
-                <Label text="Chào mừng trở lại! Hôm nay là ngày mới, hãy bắt đầu quản lý cửa hàng của bạn." styleClass="subtitle" />
-                <TextField fx:id="usernameField" promptText="Email" styleClass="input-field" />
-                <PasswordField fx:id="passwordField" promptText="Mật khẩu" styleClass="input-field" />
-                <Hyperlink text="Quên mật khẩu?" styleClass="forgot-password" />
-                <Button text="Đăng Nhập" onAction="#handleLogin" styleClass="sign-in-button" />
-                <Label text="Hoặc" styleClass="or-label" />
-                <HBox spacing="10" alignment="CENTER">
-                    <Button styleClass="social-button google" text="Đăng nhập bằng Google" />
-                    <Button styleClass="social-button facebook" text="Đăng nhập bằng Facebook" />
+        <VBox fx:id="loginBox" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="12.0" prefHeight="777.0" prefWidth="686.0" spacing="20" styleClass="login-box">
+            <children>
+                <Label styleClass="logo" text="SnapShop" />
+                <Label styleClass="welcome-title" text="Chào mừng trở lại!" />
+                <Label maxWidth="500" styleClass="welcome-sub" text="Đồng hành cùng bạn trên mọi hành trình!" wrapText="true" />
+                <Label styleClass="input-label" text="Email" />
+                <TextField fx:id="usernameField" prefHeight="43.0" prefWidth="524.0" promptText="Enter your email" styleClass="email-field">
+               <font>
+                  <Font size="53.0" />
+               </font></TextField>
+                <Label styleClass="input-label" text="Password" />
+                <PasswordField fx:id="passwordField" promptText="••••••" styleClass="password-field" />
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <children>
+                        <CheckBox styleClass="remember-check" text="Lưu Đăng Nhập">
+                            <HBox.margin>
+                                <Insets top="20.0" />
+                            </HBox.margin>
+                        </CheckBox>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <Hyperlink styleClass="forgot-password" text="Quên mật khẩu?">
+                            <HBox.margin>
+                                <Insets top="20.0" />
+                            </HBox.margin>
+                        </Hyperlink>
+                    </children>
                 </HBox>
-                <Label text="Bạn chưa có tài khoản? Đăng ký" styleClass="signup-link" />
-                <Label fx:id="errorLabel" text="" styleClass="error-label" />
-            </VBox>
+                <Button onAction="#handleLogin" prefWidth="180" styleClass="sign-in-button" text="Log in">
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </Button>
+                <HBox alignment="CENTER" spacing="8">
+                    <VBox.margin>
+                        <Insets top="22.0" />
+                    </VBox.margin>
+                    <children>
+                        <Label styleClass="signup-label" text="Don't have an account?" />
+                        <Hyperlink styleClass="signup-link" text="Sign up" />
+                    </children>
+                </HBox>
+            </children>
         </VBox>
     </children>
 </AnchorPane>

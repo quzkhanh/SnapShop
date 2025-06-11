@@ -1,0 +1,104 @@
+@font-face {
+    src: url("../fonts/NotoSans-VariableFont_wdth,wght.ttf"); /* Kiểm tra đường dẫn */
+}
+
+.login-box {
+    -fx-background-color: rgb(255, 255, 255); /* Nền mờ giống ảnh */
+    -fx-padding: 18 22 18 22;
+    -fx-background-radius: 18px;
+    -fx-spacing: 10px;
+}
+
+.logo {
+    -fx-font-size: 35px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Noto Sans Variable"; /* Thống nhất tên font */
+    -fx-text-fill: #7edc7e;
+}
+
+.welcome-title {
+    -fx-font-size: 36px;
+    -fx-font-family: "Noto Sans Variable";
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e1c1b;
+}
+
+.welcome-sub {
+    -fx-font-family: "Noto Sans Variable";
+    -fx-font-size: 18px;
+    -fx-text-fill: #1A1110;
+    -fx-padding: 0 0 16 0;
+}
+
+.input-label {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #222;
+    -fx-padding: 10 0 0 0;
+}
+
+.input-container {
+    -fx-padding: 0 0 6 0;
+}
+
+.email-field {
+    -fx-background-color: #fff;
+    -fx-border-color: #e3e1dd;
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-padding: 10 10 10 10;
+    -fx-font-size: 20px; /* Font size cho email */
+    -fx-pref-width: 280px;
+}
+
+.password-field {
+    -fx-background-color: #fff;
+    -fx-border-color: #e3e1dd;
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-padding: 10 10 10 10;
+    -fx-font-size: 14px; /* Font size nhỏ hơn cho mật khẩu */
+    -fx-pref-width: 280px;
+}
+
+.option-row {
+    -fx-padding: 10 0 10 0;
+}
+
+.remember-check {
+    -fx-font-size: 13px;
+}
+
+.forgot-password {
+    -fx-font-size: 13px;
+    -fx-text-fill: #7963c9;
+    -fx-underline: true;
+}
+
+.sign-in-button {
+    -fx-background-color: #181818;
+    -fx-text-fill: #fff;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 40px; /* Thêm chiều cao */
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 7px;
+    -fx-padding: 10 20 10 20; /* Điều chỉnh padding */
+}
+
+.signup-label {
+    -fx-text-fill: #a8a8a8;
+    -fx-font-size: 16px;
+}
+
+.signup-link {
+    -fx-text-fill: #181818;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.root {
+    -fx-background-image: url("../images/cherry_blossom_background.jpg"); /* Thay bằng đường dẫn thực */
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}

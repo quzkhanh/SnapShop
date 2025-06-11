@@ -13,7 +13,7 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         System.out.println("Đang load FXML: " + getClass().getResource("/fxml/login.fxml"));
-        System.out.println("Đang load background: " + getClass().getResource("/images/flower-background.jpg"));
+
         Parent root = null;
         try {
             root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
@@ -25,11 +25,20 @@ public class MainApp extends Application {
             throw e;
         }
         primaryStage.setTitle("SnapShop");
-        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.setScene(new Scene(root, 1200, 750)); // Đặt size mong muốn
+
+        // --- KHÓA RESIZE & CỐ ĐỊNH KÍCH THƯỚC ---
+        primaryStage.setResizable(false);
+        primaryStage.setMinWidth(1400);
+        primaryStage.setMinHeight(800);
+        primaryStage.setMaxWidth(1400);
+        primaryStage.setMaxHeight(800);
+
         primaryStage.show();
 
         initializeDatabase();
     }
+
 
     private void initializeDatabase() {
         try (Connection conn = DatabaseConnection.getConnection()) {
