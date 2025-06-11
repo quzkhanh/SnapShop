@@ -1,23 +1,25 @@
 @font-face {
-    src: url("../fonts/NotoSans-VariableFont_wdth,wght.ttf"); /* Kiểm tra đường dẫn */
+    font-family: "NotoSans";
+    src: url("@..fonts/NotoSans-VariableFont_wdth,wght.ttf");
 }
 
 .login-box {
-    -fx-background-color: rgb(255, 255, 255); /* Nền mờ giống ảnh */
+    -fx-background-color: rgb(255, 255, 255);
     -fx-padding: 18 22 18 22;
     -fx-background-radius: 18px;
     -fx-spacing: 10px;
 }
 
 .logo {
-    -fx-font-size: 35px;
+    -fx-font-size: 40px;
     -fx-font-weight: bold;
-    -fx-font-family: "Noto Sans Variable"; /* Thống nhất tên font */
-    -fx-text-fill: #7edc7e;
+    -fx-font-family: "Noto Sans"; /* Thống nhất tên font */
+    -fx-text-fill: #5f7f7e;
+    -fx-spacing: 10px;
 }
 
 .welcome-title {
-    -fx-font-size: 36px;
+    -fx-font-size: 32px;
     -fx-font-family: "Noto Sans Variable";
     -fx-font-weight: bold;
     -fx-text-fill: #1e1c1b;
