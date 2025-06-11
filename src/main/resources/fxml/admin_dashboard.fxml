@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.snapshop.controller.DashboardAdminController">
+    <children>
+        <!-- Menu trượt (Navigation Drawer) -->
+        <VBox prefHeight="800.0" prefWidth="300.0" style="-fx-background-color: linear-gradient(to bottom, #2c3e50, #34495e);" visible="true" managed="true" fx:id="menuPane">
+            <children>
+                <Label text="Admin Dashboard" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #ecf0f1;" />
+                <Button fx:id="productManagementBtn" text="Quản lý sản phẩm" onAction="#handleProductManagement" style="-fx-background-color: transparent; -fx-text-fill: #ecf0f1; -fx-font-size: 16px; -fx-padding: 10px;" />
+                <Button fx:id="orderManagementBtn" text="Quản lý đơn hàng" onAction="#handleOrderManagement" style="-fx-background-color: transparent; -fx-text-fill: #ecf0f1; -fx-font-size: 16px; -fx-padding: 10px;" />
+                <Button fx:id="staffManagementBtn" text="Quản lý nhân viên" onAction="#handleStaffManagement" style="-fx-background-color: transparent; -fx-text-fill: #ecf0f1; -fx-font-size: 16px; -fx-padding: 10px;" />
+                <Button fx:id="reportBtn" text="Thống kê – Báo cáo" onAction="#handleReport" style="-fx-background-color: transparent; -fx-text-fill: #ecf0f1; -fx-font-size: 16px; -fx-padding: 10px;" />
+                <Button fx:id="invoiceBtn" text="In hóa đơn PDF" onAction="#handleInvoice" style="-fx-background-color: transparent; -fx-text-fill: #ecf0f1; -fx-font-size: 16px; -fx-padding: 10px;" />
+                <Button fx:id="accountBtn" text="Quản lý tài khoản" onAction="#handleAccountManagement" style="-fx-background-color: transparent; -fx-text-fill: #ecf0f1; -fx-font-size: 16px; -fx-padding: 10px;" />
+            </children>
+            <padding>
+                <Insets top="20.0" right="20.0" bottom="20.0" left="20.0" />
+            </padding>
+        </VBox>
+
+        <!-- Nửa phải: Nội dung chính với TabPane -->
+        <TabPane layoutX="300.0" prefHeight="800.0" prefWidth="1100.0" tabClosingPolicy="UNAVAILABLE" style="-fx-background-color: #ecf0f1;">
+            <tabs>
+                <Tab text="Quản lý sản phẩm">
+                    <content>
+                        <AnchorPane prefHeight="800.0" prefWidth="1100.0">
+                            <children>
+                                <Label layoutX="20.0" layoutY="20.0" text="Quản lý sản phẩm" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+                                <VBox layoutX="20.0" layoutY="60.0" spacing="10.0">
+                                    <Label text="Chức năng: Xem danh sách, Thêm, Sửa, Xóa, Quản lý loại, Nhập hàng loạt" style="-fx-font-size: 16px;" />
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Quản lý đơn hàng">
+                    <content>
+                        <AnchorPane prefHeight="800.0" prefWidth="1100.0">
+                            <children>
+                                <Label layoutX="20.0" layoutY="20.0" text="Quản lý đơn hàng" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+                                <VBox layoutX="20.0" layoutY="60.0" spacing="10.0">
+                                    <Label text="Chức năng: Xem danh sách, Hủy đơn" style="-fx-font-size: 16px;" />
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Quản lý nhân viên">
+                    <content>
+                        <AnchorPane prefHeight="800.0" prefWidth="1100.0">
+                            <children>
+                                <Label layoutX="20.0" layoutY="20.0" text="Quản lý nhân viên" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+                                <VBox layoutX="20.0" layoutY="60.0" spacing="10.0">
+                                    <Label text="Chức năng: Thêm, Sửa, Xóa, Reset mật khẩu" style="-fx-font-size: 16px;" />
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Thống kê – Báo cáo">
+                    <content>
+                        <AnchorPane prefHeight="800.0" prefWidth="1100.0">
+                            <children>
+                                <Label layoutX="20.0" layoutY="20.0" text="Thống kê – Báo cáo" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+                                <!-- Placeholder cho biểu đồ -->
+                                <Pane fx:id="chartPlaceholder" layoutX="20.0" layoutY="60.0" prefHeight="700.0" prefWidth="1060.0" style="-fx-background-color: #ffffff;" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="In hóa đơn PDF">
+                    <content>
+                        <AnchorPane prefHeight="800.0" prefWidth="1100.0">
+                            <children>
+                                <Label layoutX="20.0" layoutY="20.0" text="In hóa đơn PDF" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+                                <VBox layoutX="20.0" layoutY="60.0" spacing="10.0">
+                                    <Label text="Chức năng: In hóa đơn" style="-fx-font-size: 16px;" />
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Quản lý tài khoản">
+                    <content>
+                        <AnchorPane prefHeight="800.0" prefWidth="1100.0">
+                            <children>
+                                <Label layoutX="20.0" layoutY="20.0" text="Quản lý tài khoản cá nhân" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+                                <VBox layoutX="20.0" layoutY="60.0" spacing="10.0">
+                                    <Label text="Chức năng: Xem, Chỉnh sửa, Đổi mật khẩu" style="-fx-font-size: 16px;" />
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+
+        <!-- Hình nền với hiệu ứng Bloom -->
+        <ImageView fitHeight="800.0" fitWidth="1400.0" pickOnBounds="true" preserveRatio="false" opacity="0.3">
+            <image>
+
+            </image>
+            <effect>
+                <Bloom threshold="0.7" />
+            </effect>
+        </ImageView>
+    </children>
+</AnchorPane>

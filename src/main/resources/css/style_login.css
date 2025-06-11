@@ -100,7 +100,7 @@
 }
 
 .root {
-    -fx-background-image: url("../images/cherry_blossom_background.jpg"); /* Thay bằng đường dẫn thực */
+    -fx-background-image: url("../images/cherry_blossom_background.jpg");
     -fx-background-size: cover;
     -fx-background-position: center;
 }
